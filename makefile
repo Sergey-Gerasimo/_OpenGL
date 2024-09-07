@@ -1,6 +1,6 @@
 CC = g++
 TARGET = main
-FLAGG = -w
+FLAGG = -w -std=c++11
 FRAMEWORKS = -framework OpenGL
 INCLUDES = -Idepends/include
 LIBS = -Ldepends/library

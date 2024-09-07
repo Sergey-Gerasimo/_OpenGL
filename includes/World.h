@@ -1,0 +1,6 @@
+class World {
+    private: 
+
+    public: 
+
+};
