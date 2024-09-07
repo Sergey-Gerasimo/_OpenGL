@@ -1,5 +1,6 @@
 #include "../includes/Object.h"
 #include <OpenGL/gl.h> 
+#include <iostream>
 
 OGLTypes::Object::Object(PointFloat3d points[], float colors[], unsigned int size)
 {
@@ -39,35 +40,15 @@ void OGLTypes::Object::draw(){
     glVertexPointer(3, GL_FLOAT, 0, this->points);
     glColorPointer(3, GL_FLOAT, 0, this->colors);
 
-
-    //glTranslatef(position.getValue().getX(), position.getValue().getY(), position.getValue().getZ());
-    if (this->position.isChanged()){
-        glTranslatef(position.getValue().getX(), position.getValue().getY(), position.getValue().getZ());
-        position.disableState();
-    }
-
-    if (this->yAngle.isChanged()){
-        glRotatef(yAngle.getValue(), 0, 1, 0);
-        yAngle.disableState();
-    }
-
-    if (zAngle.isChanged()){
-        glRotatef(zAngle.getValue(), 0, 0, 1);
-        zAngle.disableState();
-    }
-
-    if (xAngle.isChanged() == 1){
-        glRotatef(xAngle.getValue(), 1, 0, 0);
-        xAngle.disableState();
-    }
-
-    if (scalecoef.isChanged()){
-        glScalef(scalecoef.getValue(), scalecoef.getValue(), scalecoef.getValue());
-        position.disableState();
-    }
+    glTranslatef(position.getX(), position.getY(), position.getZ());
+    glRotatef(yAngle, 0, 1, 0);
+    glRotatef(zAngle, 0, 0, 1);
+    glRotatef(xAngle, 1, 0, 0);
+    glScalef(scalecoef, scalecoef, scalecoef);
     
     glDrawArrays(GL_TRIANGLE_FAN, 0, this->size);
-    
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_COLOR_ARRAY);
     glPopMatrix();
-
+    
 }

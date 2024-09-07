@@ -26,11 +26,11 @@ class Object{
         float* colors; 
         PointFloat3d* points; 
 
-        ObservableType<PointFloat3d> position = PointFloat3d(0.0f, 0.0f, 0.0f); 
-        ObservableType<float> xAngle = 0.0f; 
-        ObservableType<float> yAngle = 0.0f; 
-        ObservableType<float> zAngle = 0.0f; 
-        ObservableType<float> scalecoef = 1.0f; 
+        PointFloat3d position{PointFloat3d(0.0f, 0.0f, 0.0f)}; 
+        float xAngle = 0.0f; 
+        float yAngle = 0.0f; 
+        float zAngle = 0.0f; 
+        float scalecoef = 1.0f; 
 
 };
 };

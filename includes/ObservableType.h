@@ -5,10 +5,17 @@ template <class U>
 class ObservableType
 {
     public: 
+
+        ObservableType(const ObservableType& other){
+            this->value = other.value; 
+            this->isChangedFlg = other.isChangedFlg;
+
+        }
+
         ObservableType(U value){
             this->value = value;
         }; 
-
+    
         ObservableType& operator=(U value){
             this->value = value; 
             this->isChangedFlg = 1; 

@@ -64,18 +64,15 @@ int main(void)
     };
 
     OGLTypes::Object obj(points, colors, sizeof(points)/sizeof(points[0])); 
-    OGLTypes::Object obj2(points, colors, sizeof(points)/sizeof(points[0]));
-    obj.move2(OGLTypes::Vector3d(1, 1, 0));
     
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.7f, 1.0f, 0.7f, 0.0f);
 
-        obj.draw();
-        obj2.draw();
-
         moveCamera(window); 
+        obj.rotate(1, 0, 0, 1);
+        obj.draw();
         
         glfwPollEvents();
         glfwSwapBuffers(window);
