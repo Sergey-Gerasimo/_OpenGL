@@ -9,6 +9,7 @@ SOURCEPATH = source
 
 
 all: clean compile
+	echo "$(TARGET)" > ./.gitignore
 
 compile: 
 	$(CC) $(SOURCEPATH)/* $(FLAGG) $(INCLUDES) $(LIBS) $(DYNAMICFILES) $(FRAMEWORKS) -o $(TARGET)
@@ -17,4 +18,5 @@ run:
 	./$(TARGET)
 
 clean: 
+	rm -f .gitignore
 	rm -f $(TARGET)
