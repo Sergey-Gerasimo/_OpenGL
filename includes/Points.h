@@ -30,5 +30,7 @@ class POINTFLOAT{
       float z = 0; 
 
 };
+
+typedef POINTFLOAT PointFloat3d, Vector3d;
 };
 #endif 

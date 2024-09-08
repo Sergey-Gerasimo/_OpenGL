@@ -1,4 +1,6 @@
-class World {
+class World
+
+{
     private: 
 
     public: 
