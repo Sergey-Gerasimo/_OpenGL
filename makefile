@@ -1,5 +1,6 @@
 CC = g++
 TARGET = main
+GITIGNORELIST = $(TARGET) \ndepends \n.vscode 
 FLAGG = -w -std=c++11
 FRAMEWORKS = -framework OpenGL
 INCLUDES = -Idepends/include
@@ -9,7 +10,8 @@ SOURCEPATH = source
 
 
 all: clean compile
-	echo "$(TARGET)" > ./.gitignore
+	echo "$(GITIGNORELIST)" >> ./.gitignore
+
 
 compile: 
 	$(CC) $(SOURCEPATH)/* $(FLAGG) $(INCLUDES) $(LIBS) $(DYNAMICFILES) $(FRAMEWORKS) -o $(TARGET)
@@ -18,5 +20,5 @@ run:
 	./$(TARGET)
 
 clean: 
-	rm -f .gitignore
+	echo > .gitignore
 	rm -f $(TARGET)
