@@ -13,10 +13,11 @@ protected:
     int chanks = 80;
 
 public:
+	void rander() {void draw();};
     void draw();
-	static Camera& instance()
+	static Camera& instance(unsigned int chanks)
 	{
-		static Camera instance;
+		static Camera instance(chanks);
 		return instance;
 	}
 };

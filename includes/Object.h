@@ -13,13 +13,15 @@ class Object: public AbstractObject
     public: 
         Object(std::string filename); 
         Object(PointFloat3d points[], unsigned int size, float colors[] = nullptr);
+        void setColors(float* colors);
+        void setNormals(float* normals);
         void draw(); 
         
     protected: 
-        bool colorState = 0; 
         unsigned int size = 0;
-        float* colors; 
+        float* colors=nullptr; 
         PointFloat3d* points; 
+        float* normals=nullptr; 
 
 
 };

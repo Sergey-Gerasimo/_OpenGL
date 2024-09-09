@@ -1,6 +1,7 @@
 #ifndef __POINTS_H__
 #define __POINTS_H__
 
+#include <iostream>
 namespace OGLTypes
 {
 class POINTFLOAT{
@@ -30,7 +31,7 @@ class POINTFLOAT{
       float z = 0; 
 
 };
-
 typedef POINTFLOAT PointFloat3d, Vector3d;
 };
+
 #endif 
