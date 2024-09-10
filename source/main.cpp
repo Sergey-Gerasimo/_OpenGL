@@ -22,6 +22,7 @@ std::ostream &operator<<(std::ostream &os, OGLTypes::POINTFLOAT &obj)
 void moveCamera(GLFWwindow* window, OGLTypes::Camera &camera){
     double xPos = 0.0f;
     double yPos = 0.0f;
+    
     float speed = 0.0;  
     float ugol = -camera.getAngleZ()/180 * M_PI;
     float upDownSpeed = 0; 
